@@ -1,0 +1,69 @@
+:root {
+  --min-body-container-height: 80vh;
+  --min-message-container-height: 300px;
+  --min-body-container-width: 50%;
+  --min-chatbox-height: 45px;
+  --vertical-gap: 30px;
+}
+.nav-link {
+  color: whitesmoke !important;
+}
+
+::-webkit-scrollbar {
+  max-width: 5px;
+  max-height: 5px;
+  background: transparent;
+}
+
+.stretchit {
+  align-items: stretch !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.45);
+  border-radius: 10px; /* Optional: just make scrollbar invisible */
+}
+
+.scrollspy-example-2 {
+  height: 400px; /* Adjust height as needed */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+.border-line {
+  border: var(--bs-border-width) solid var(--bs-border-color);
+  border-radius: var(--bs-border-radius);
+}
+
+.max-h-200 {
+  max-height: 600px;
+}
+
+body {
+  width: 100%;
+  margin: 70px 0px;
+}
+
+.m-h {
+  height: var(--min-body-container-height);
+  overflow: auto;
+}
+
+.m-ch {
+  height: var(--min-chatbox-height);
+  overflow: auto;
+}
+
+.min-h {
+  min-height: var(--min-message-container-height);
+}
+
+.min-w {
+  min-width: var(--min-body-container-width);
+}
+
+.v-gap {
+  margin-top: var(--vertical-gap);
+}
+
+.v-padding {
+  padding-top: var(--vertical-gap);
+}
