@@ -25,4 +25,7 @@ app.get("/roadmap", (req, res) => {
 //io receive signal from frontend
 //io emit data to frontend
 
-server.listen(port, () => console.log("server listening on port 3000"));
+const PORT = process.env.PORT || 3000; // Fallback to 3000 for local dev
+server.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
