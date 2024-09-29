@@ -1,3 +1,6 @@
+const socket = io();
+console.log("browser socket connected");
+
 var messageCount = 0;
 const messageBox = document.getElementById("messageBox");
 const inputBox = document.getElementById("inputBox");
