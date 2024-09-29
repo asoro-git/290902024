@@ -1,18 +1,26 @@
+//require all the packages, call using constName.function(var)
 const express = require("express");
-const app = express();
+const http = require("http");
+const socketIo = require("socket.io");
 const path = require("path");
+
+//testing port
 const port = 3000;
-const socketio = require("socket.io");
+
+// start a http server
+const app = express();
+const server = http.createServer(app);
+
+// send server details to socketIo and establish socket server
+const io = socketIo(server);
+
+// connect to mongoose
 const mongoose = require("mongoose");
+const { hostname } = require("os");
 
 app.use("/static", express.static("static"));
 
-//connect to mongoose
-
-// start a http server
-const http = require("http");
-const server = http.createServer(app);
-const io = socketio(server);
+// express serves files to front end, front end file should contain socket.js and const socket = io()
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 });
@@ -25,8 +33,24 @@ app.get("/roadmap", (req, res) => {
   res.sendFile(path.join(__dirname, "roadmap.html"));
 });
 
-// //io receive signal from frontend
-// io.on("connection", console.log("socket connected!"));
+let message = "";
+
+// after serving files to front end, io start listening to message sent from front end
+// console log if mutual channel has been established
+// io receive signal from frontend, create connection and disconnection messages
+io.on("connection", (socket) => {
+  console.log(`user ${socket.id} connected.`);
+  socket.on("chat message", (data) => {
+    message = data.message;
+    console.log(data.message, data.messageCount);
+    io.emit("chat message", message);
+  });
+
+  socket.on("disconnect", () => {
+    console.log(`user ${socket.id} has disconnected.`);
+  });
+});
+
 // //io emit data to frontend
 
 const PORT = process.env.PORT || 3000; // Fallback to 3000 for local dev
