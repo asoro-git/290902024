@@ -50,6 +50,7 @@ function sendMessage() {
   // check for client-side commands
   if (/^(\/help)$/g.test(message)) {
     sendHelpMessage();
+    inputBox.value = "";
   } else if (message.length <= 500) {
     // if first time sending message, clear placeholder
     messageCount += 1;
