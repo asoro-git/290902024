@@ -60,10 +60,10 @@ function appendMessage(data) {
     console.log(
       "messageBox.scrollTop + messageBox.clientHeight >=messageBox.scrollHeight"
     );
-    messageBox.innerHTML += `<span> [${timeStamp}] ${userName} says: ${_message} </span>`;
+    messageBox.innerHTML += `<span> [${timeStamp}] ${_userName} says: ${_message} </span>`;
     messageBox.scrollTop = messageBox.scrollHeight;
   } else {
-    messageBox.innerHTML += `<span> [${timeStamp}] ${userName} says: ${_message} </span>`;
+    messageBox.innerHTML += `<span> [${timeStamp}] ${_userName} says: ${_message} </span>`;
   }
 }
 

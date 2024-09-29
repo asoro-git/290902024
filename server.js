@@ -41,7 +41,7 @@ io.on("connection", (socket) => {
   socket.on("chat message", (data) => {
     let _userName = data.userName;
     let _message = data.message;
-    console.log(data.message, data.messageCount);
+    console.log(data.userName, data.message, data.messageCount);
     io.emit("chat message", { _userName, _message });
   });
 
