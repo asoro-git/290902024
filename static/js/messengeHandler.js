@@ -128,6 +128,12 @@ function prepareNonEmptyMessage(_userName, _message) {
     _message = _message.replace(/^(\/bigger)/g, "");
     _message = `<h1>${_message}</h1>`;
   }
+  if (/(^\/rickroll)/g.test(_message)) {
+    _message = _message.replace(
+      /(\/rickroll)/g,
+      '<img src="https://media.tenor.com/qRq-Dq-uA24AAAAM/rick-roll.gif" width="100px" height="100px" alt="have fun rick rolled"></img>'
+    );
+  }
   console.log(_message);
 
   // look up time stamp
