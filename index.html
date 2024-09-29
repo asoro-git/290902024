@@ -154,166 +154,179 @@
     </section>
     <section>
       <!-- main-container -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-2 d-none d-sm-none d-md-block col-2 p-3 border-end">
+            <span class="fs-4">Online Linkers</span>
+            <hr />
+            <div class="nav flex-column" id="online-linkers">
+              <span><span id="player-number"></span>currently online.</span>
+            </div>
+            <ul id="player-list" class="nav flex-column mt-3">
+              <!--player name here-->
+            </ul>
+          </div>
+          <div class="col-8 container">
+            <section>
+              <div id="carouselExample" class="carousel slide">
+                <div
+                  id="carouselExampleSlidesOnly"
+                  class="carousel slide"
+                  data-bs-ride="carousel"
+                >
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <img
+                        src="https://static.thcdn.com/images/xlarge/webp/widgets/83-au/27/original-New_Page-033327.png"
+                        class="d-block w-100 img-fluid"
+                        alt="https://static.thcdn.com/images/xlarge/webp/widgets/83-au/27/original-New_Page-033327.png "
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="https://static.thcdn.com/images/xlarge/webp/widgets/83-au/27/original-New_Page-033327.png"
+                        class="d-block w-100 img-fluid"
+                        alt="https://static.thcdn.com/images/xlarge/webp/widgets/83-au/27/original-New_Page-033327.png "
+                      />
+                    </div>
+                    <div class="carousel-item">
+                      <img
+                        src="https://static.thcdn.com/images/xlarge/webp/widgets/83-au/27/original-New_Page-033327.png "
+                        class="d-block w-100 img-fluid"
+                        alt="https://static.thcdn.com/images/xlarge/webp/widgets/83-au/27/original-New_Page-033327.png "
+                      />
+                    </div>
+                  </div>
+                </div>
+                <button
+                  class="carousel-control-prev"
+                  type="button"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="prev"
+                >
+                  <span
+                    class="carousel-control-prev-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button
+                  class="carousel-control-next"
+                  type="button"
+                  data-bs-target="#carouselExample"
+                  data-bs-slide="next"
+                >
+                  <span
+                    class="carousel-control-next-icon"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </section>
+            <div class="card card-body v-gap m-h" id="messageBox">
+              <div id="message-box-placeholders">
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <span class="placeholder col-8"></span>
+                </p>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <span class="placeholder col-8"></span>
+                </p>
+                <p class="card-text placeholder-glow">
+                  <span class="placeholder col-7"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-4"></span>
+                  <span class="placeholder col-6"></span>
+                  <span class="placeholder col-8"></span>
+                </p>
+                <h5 class="card-title placeholder-glow">
+                  <span class="placeholder col-6"></span>
+                </h5>
+              </div>
+            </div>
 
-      <div class="container v-padding">
-        <section>
-          <div id="carouselExample" class="carousel slide">
+            <div class="input-group mb-3 v-gap">
+              <input
+                type="text"
+                id="inputBox"
+                class="form-control"
+                placeholder="Type your message here."
+                aria-label="Input message"
+                aria-describedby="button-addon2"
+              />
+              <button
+                class="btn btn-outline-secondary"
+                type="button"
+                id="send-button"
+                onclick="sendMessage()"
+              >
+                Send
+              </button>
+            </div>
+
+            <!-- Modal -->
             <div
-              id="carouselExampleSlidesOnly"
-              class="carousel slide"
-              data-bs-ride="carousel"
+              class="modal fade modal-open"
+              id="example-modal"
+              tabindex="-1"
+              aria-labelledby="example-modal-label"
+              aria-hidden="true"
             >
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img
-                    src="https://static.thcdn.com/images/xlarge/webp/widgets/83-au/27/original-New_Page-033327.png"
-                    class="d-block w-100 img-fluid"
-                    alt="https://static.thcdn.com/images/xlarge/webp/widgets/83-au/27/original-New_Page-033327.png "
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="https://static.thcdn.com/images/xlarge/webp/widgets/83-au/27/original-New_Page-033327.png"
-                    class="d-block w-100 img-fluid"
-                    alt="https://static.thcdn.com/images/xlarge/webp/widgets/83-au/27/original-New_Page-033327.png "
-                  />
-                </div>
-                <div class="carousel-item">
-                  <img
-                    src="https://static.thcdn.com/images/xlarge/webp/widgets/83-au/27/original-New_Page-033327.png "
-                    class="d-block w-100 img-fluid"
-                    alt="https://static.thcdn.com/images/xlarge/webp/widgets/83-au/27/original-New_Page-033327.png "
-                  />
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="example-modal-label">
+                      Pick A Name
+                    </h1>
+
+                    <button
+                      type="button"
+                      id="close-button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Enter a name you like...</p>
+                    <input class="form-control" id="custom-name-box" />
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      type="button"
+                      id="submit-name-btn"
+                      class="btn btn-primary"
+                      onclick="getCustomName()"
+                      data-bs-dismiss="modal"
+                    >
+                      Save changes
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-            <button
-              class="carousel-control-prev"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="prev"
-            >
-              <span
-                class="carousel-control-prev-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button
-              class="carousel-control-next"
-              type="button"
-              data-bs-target="#carouselExample"
-              data-bs-slide="next"
-            >
-              <span
-                class="carousel-control-next-icon"
-                aria-hidden="true"
-              ></span>
-              <span class="visually-hidden">Next</span>
-            </button>
           </div>
-        </section>
-        <div class="card card-body v-gap m-h" id="messageBox">
-          <div id="message-box-placeholders">
-            <h5 class="card-title placeholder-glow">
-              <span class="placeholder col-6"></span>
-            </h5>
-            <p class="card-text placeholder-glow">
-              <span class="placeholder col-7"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-6"></span>
-              <span class="placeholder col-8"></span>
-            </p>
-            <p class="card-text placeholder-glow">
-              <span class="placeholder col-7"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-6"></span>
-              <span class="placeholder col-8"></span>
-            </p>
-            <p class="card-text placeholder-glow">
-              <span class="placeholder col-7"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-4"></span>
-              <span class="placeholder col-6"></span>
-              <span class="placeholder col-8"></span>
-            </p>
-            <h5 class="card-title placeholder-glow">
-              <span class="placeholder col-6"></span>
-            </h5>
-          </div>
-        </div>
-
-        <div class="input-group mb-3 v-gap">
-          <input
-            type="text"
-            id="inputBox"
-            class="form-control"
-            placeholder="Type your message here."
-            aria-label="Input message"
-            aria-describedby="button-addon2"
-          />
-          <button
-            class="btn btn-outline-secondary"
-            type="button"
-            id="send-button"
-            onclick="sendMessage()"
-          >
-            Send
-          </button>
-        </div>
-
-        <!-- Modal -->
-        <div
-          class="modal fade modal-open"
-          id="example-modal"
-          tabindex="-1"
-          aria-labelledby="example-modal-label"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h1 class="modal-title fs-5" id="example-modal-label">
-                  Pick A Name
-                </h1>
-
-                <button
-                  type="button"
-                  id="close-button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
-              </div>
-              <div class="modal-body">
-                <p>Enter a name you like...</p>
-                <input class="form-control" id="custom-name-box" />
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button
-                  type="button"
-                  id="submit-name-btn"
-                  class="btn btn-primary"
-                  onclick="getCustomName()"
-                  data-bs-dismiss="modal"
-                >
-                  Save changes
-                </button>
-              </div>
-            </div>
-          </div>
+          <!-- <div class="col-2 d-none d-sm-none d-md-block"></div> -->
         </div>
       </div>
-
       <!-- <button
         type="button"
         class="btn btn-lg btn-danger"
@@ -340,5 +353,6 @@
     </script>
 
     <script src="static/js/messengeHandler.js"></script>
+    <script src="static/js/onlineLinkers.js"></script>
   </body>
 </html>

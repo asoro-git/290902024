@@ -13,6 +13,9 @@ document.addEventListener("keydown", (event) => {
   if (event.key == "Enter" && !exampleModal.classList.contains("show")) {
     sendMessage();
   }
+  if (event.key == "`") {
+    messageBox.scrollTop = messageBox.scrollHeight;
+  }
 });
 
 function getCustomName() {
@@ -24,6 +27,7 @@ function getCustomName() {
     userName = customNameBox.value;
     userName = userName.replace(/</g, "&lt;").replace(/>/g, "&gt;");
     console.log("username set to", userName);
+    socket.emit("name change", { userName });
   }
 }
 

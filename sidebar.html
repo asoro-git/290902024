@@ -2,152 +2,154 @@
 <html lang="en" data-bs-theme="dark">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Front-end</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
-    <script src="static/js/bootstrapJs.js"></script>
-    <link rel="icon" type="image/x-icon" href="/static/images/placeholder.ico" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <link href="static/css/stylesheet.css" rel="stylesheet" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Front-end</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
+  <script src="static/js/bootstrapJs.js"></script>
+  <link rel="icon" type="image/x-icon" href="/static/images/placeholder.ico" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link href="static/css/stylesheet.css" rel="stylesheet" />
 </head>
 
 <body>
-    <section>
-        <!--nav-bar-->
-        <header class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-            <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
-                <!--navbar offcanvas toggle: data-bs-toggle, data-bs-target-->
-                <a class="navbar-brand" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-                    href="#"><i>Accel Universe Online</i></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="/">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="roadmap">Roadmap</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false">
-                                Dropdown
-                            </a>
+  <section>
+    <!--nav-bar-->
+    <header class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+        <!--navbar offcanvas toggle: data-bs-toggle, data-bs-target-->
+        <a class="navbar-brand" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" href="#"><i>Accel Universe
+            Online</i></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="roadmap">Roadmap</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Dropdown
+              </a>
 
-                            <ul class="dropdown-menu">
-                                <li>
-                                    <a class="dropdown-item" href="#" data-bs-toggle="modal"
-                                        data-bs-target="#exampleModal">
-                                        Toggle Alert
-                                    </a>
-                                </li>
-                                <li><a class="dropdown-item" href="#">Another action</a></li>
-                                <li>
-                                    <hr class="dropdown-divider" />
-                                </li>
-                                <li>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-                        <button class="btn btn-outline-success" type="submit">
-                            Search
-                        </button>
-                    </form>
-                </div>
-            </nav>
-        </header>
-    </section>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Toggle Alert
+                  </a>
+                </li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form>
+        </div>
+      </nav>
+    </header>
+  </section>
 
-    <section>
-        <!--main-container-->
+  <section>
+    <!--main-container-->
 
-        <div class="container-fluid">
-            <div class="row flex-nowrap container-fluid">
-                <div class="d-none d-sm-none d-md-block d-flex flex-column flex-0 p-3 text-white bg-dark sidebar-sticky border-end" style="padding-top: 0px; max-width: 280px; height: cal(100vh-60px); overflow: auto">
-                    <a href="/"
-                        class="d-flex align-items-center text-white text-decoration-none">
-                        <svg class="bi me-2" width="40" height="32">
-                            <use xlink:href="#"></use>
-                        </svg>
-                        <span class="fs-4">Burst Linking</span>
-                    </a>
-                    <hr />
-                    <ul class="nav nav-pills flex-column mb-auto">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link active" aria-current="page">
-                                <svg class="bi me-2" width="16" height="16">
-                                    <use xlink:href="#"></use>
-                                </svg>
-                                Home
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link text-white">
-                                <svg class="bi me-2" width="16" height="16">
-                                    <use xlink:href="#speedometer2"></use>
-                                </svg>
-                                Brain Burst
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link text-white">
-                                <svg class="bi me-2" width="16" height="16">
-                                    <use xlink:href="#table"></use>
-                                </svg>
-                                Star Link
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link text-white">
-                                <svg class="bi me-2" width="16" height="16">
-                                    <use xlink:href="#grid"></use>
-                                </svg>
-                                Burst Points
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" class="nav-link text-white">
-                                <svg class="bi me-2" width="16" height="16">
-                                    <use xlink:href="#people-circle"></use>
-                                </svg>
-                                Connected
-                            </a>
-                        </li>
-                    </ul>
-                    <hr />
-                    <div class="dropdown">
-                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle flex-end"
-                            id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="https://avatars.githubusercontent.com/u/132867898?v=4" alt="" width="32" height="32"
-                                class="rounded-circle me-2" />
-                            <strong><span id="username"></span></strong>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                            <li><a class="dropdown-item" href="#">New project...</a></li>
-                            <li><a class="dropdown-item" href="#">Settings</a></li>
-                            <li><a class="dropdown-item" href="#">Profile</a></li>
-                            <li>
-                                <hr class="dropdown-divider" />
-                            </li>
-                            <li><a class="dropdown-item" href="#">Burst Out</a></li>
-                        </ul>
-                    </div>
-                </div>
+    <div class="container-fluid">
+      <!--sidebar-->
+      <div class="row">
+        <div class="d-none d-sm-none d-md-block col-2 pt-3 border-end">
 
-                    <!-- <nav class="col-3 d-none d-md-block bg-dark sidebar">
+          <div class="flex-column justify-content-between">
+            <a href="/" class="text-white text-decoration-none">
+              <use xlink:href="#"></use>
+              <span class="fs-4">Burst Linking</span>
+            </a>
+            <hr />
+            <ul class="nav nav-pills flex-column mb-auto">
+              <li class="nav-item">
+                <a href="#" class="nav-link active" aria-current="page">
+                  <svg class="bi me-2" width="16" height="16">
+                    <use xlink:href="#"></use>
+                  </svg>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white">
+                  <svg class="bi me-2" width="16" height="16">
+                    <use xlink:href="#speedometer2"></use>
+                  </svg>
+                  Brain Burst
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white">
+                  <svg class="bi me-2" width="16" height="16">
+                    <use xlink:href="#table"></use>
+                  </svg>
+                  Star Link
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white">
+                  <svg class="bi me-2" width="16" height="16">
+                    <use xlink:href="#grid"></use>
+                  </svg>
+                  Burst Points
+                </a>
+              </li>
+              <li>
+                <a href="#" class="nav-link text-white">
+                  <svg class="bi me-2" width="16" height="16">
+                    <use xlink:href="#people-circle"></use>
+                  </svg>
+                  Connected
+                </a>
+              </li>
+            </ul>
+            <hr />
+            <div class="dropdown">
+              <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle flex-end"
+                id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://avatars.githubusercontent.com/u/132867898?v=4" alt="" width="32" height="32"
+                  class="rounded-circle me-2" />
+                <strong><span id="username"></span></strong>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                <li><a class="dropdown-item" href="#">New project...</a></li>
+                <li><a class="dropdown-item" href="#">Settings</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li>
+                  <hr class="dropdown-divider" />
+                </li>
+                <li><a class="dropdown-item" href="#">Burst Out</a></li>
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+
+
+        <!-- <nav class="col-3 d-none d-md-block bg-dark sidebar">
             <div class="sidebar-sticky">
               <ul class="nav flex-column">
                 <li class="nav-item">
@@ -412,177 +414,171 @@
               </ul>
             </div>
           </nav> -->
-                    <!--off canvas-->
-                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
-                        aria-labelledby="offcanvasExampleLabel">
-                        <div class="offcanvas-header">
-                            <h5 class="offcanvas-title" id="offcanvasExampleLabel">
-                                Offcanvas
-                            </h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                aria-label="Close"></button>
-                        </div>
-                        <div class="offcanvas-body">
-                            <div>
-                                Some text as placeholder. In real life you can have the
-                                elements you have chosen. Like, text, images, lists, etc.
-                            </div>
-                            <div class="dropdown mt-3">
-                                <button class="btn btn-secondary dropdown-toggle" type="button"
-                                    data-bs-toggle="dropdown">
-                                    Dropdown button
-                                </button>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Action</a></li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                    </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                <div class="col-8 container-fluid border-0">
-                    <div class="v-gap">
-                        <section>
-                            <div class="mb-3">
-                                <textarea class="container-fluid card min-h" id="exampleTextarea1" rows="5"
-                                    readonly></textarea>
-                            </div>
-
-                            <div class="mb-3 v-gap input-group">
-                                <input type="text" class="form-control" placeholder="Type your message here."
-                                    aria-label="Input message" aria-describedby="button-addon2" id="iputBox" />
-                                <button class="btn btn-outline-secondary" type="button" id="send-button"
-                                    onclick="sendMessage()">
-                                    Send
-                                </button>
-                            </div>
-                        </section>
-                        <section>
-                            <div class="row border-line g-0 v-gap">
-                                <div class="col-4 d-none d-sm-none d-md-block">
-                                    <nav id="navbar-example3"
-                                        class="h-100 flex-column align-items-stretch pe-4 border-end">
-                                        <nav class="nav nav-pills flex-column ">
-                                            <a class="nav-link" href="#item-1">Item 1: The Darkspawn Threat
-                                            </a>
-                                            <nav class="nav nav-pills flex-column">
-                                                <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1: The Origin of
-                                                    Darkspawn</a>
-                                                <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2 Item 1-2:
-                                                    Darkspawn Weaknesses</a>
-                                            </nav>
-                                            <a class="nav-link" href="#item-2">Item 2: The Hunters’ Guild</a>
-                                        </nav>
-                                    </nav>
-                                </div>
-
-                                <div class="col">
-                                    <div data-bs-spy="scroll" data-bs-target="#navbar-example3"
-                                        data-bs-smooth-scroll="true" class="scrollspy-example-2" tabindex="0">
-                                        <div id="item-1">
-                                            <h4>Item 1: The Darkspawn Threat</h4>
-                                            <p>
-                                                The Darkspawn, a collection of malevolent creatures
-                                                from the Abyss, have terrorized the realms for
-                                                centuries. These foul beasts thrive on chaos and
-                                                destruction, threatening to plunge the world into
-                                                eternal night. They are born from dark magic, feeding
-                                                on despair and bloodshed.
-                                            </p>
-                                        </div>
-                                        <div id="item-1-1">
-                                            <h5>Item 1-1: The Origin of Darkspawn</h5>
-                                            <p>
-                                                Long ago, when the Ancients sealed away the Abyssal
-                                                Lord, some of his power leaked into the mortal realm,
-                                                corrupting the land. This foul energy seeped into the
-                                                bodies of animals, turning them into hideous,
-                                                bloodthirsty creatures known as Darkspawn. Over time,
-                                                they evolved, becoming more intelligent and organized,
-                                                forming their own monstrous factions.
-                                            </p>
-                                            <h5>Subtypes of Darkspawn:</h5>
-                                            <ul>
-                                                <li>
-                                                    <strong>Gorefiends:</strong> The most common type,
-                                                    savage and relentless. They resemble wolves but are
-                                                    covered in spiny scales and emit a deadly toxin from
-                                                    their mouths.
-                                                </li>
-                                                <li>
-                                                    <strong>Nightmares:</strong> Shadowy figures that
-                                                    manipulate fear, appearing to hunters in their most
-                                                    terrifying forms. They can vanish into the dark and
-                                                    strike from anywhere.
-                                                </li>
-                                                <li>
-                                                    <strong>Abyssal Lords:</strong> The most powerful
-                                                    Darkspawn, capable of controlling the lesser minions
-                                                    and casting dark magic. Only the greatest hunters
-                                                    can defeat these monstrosities.
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <div id="item-1-2">
-                                            <h5>Item 1-2: Darkspawn Weaknesses</h5>
-                                            <p>
-                                                Though formidable, the Darkspawn have weaknesses that
-                                                skilled hunters exploit. The creatures are highly
-                                                sensitive to light and holy magic, their flesh burning
-                                                under the radiant energy of the sun or blessed
-                                                weapons. Silver-tipped arrows and swords are
-                                                particularly effective, as silver disrupts the dark
-                                                magic animating them.
-                                            </p>
-                                        </div>
-                                        <div id="item-2">
-                                            <h4>Item 2: The Hunters’ Guild</h4>
-                                            <p>
-                                                To protect the realms, the Hunters’ Guild was formed,
-                                                an ancient order dedicated to eradicating monsters and
-                                                defending civilization from the horrors of the Abyss.
-                                                The guild operates in secret, its members trained in
-                                                the art of combat, magic, and monster lore.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-
-                        <!-- Modal -->
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                            aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h1 class="modal-title fs-5" id="exampleModalLabel">
-                                            Modal title
-                                        </h1>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">...</div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-                                            Close
-                                        </button>
-                                        <button type="button" class="btn btn-primary">
-                                            Save changes
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <!--off canvas-->
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+          aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel">
+              Offcanvas
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div>
+              Some text as placeholder. In real life you can have the
+              elements you have chosen. Like, text, images, lists, etc.
             </div>
+            <div class="dropdown mt-3">
+              <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                Dropdown button
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li>
+                  <a class="dropdown-item" href="#">Another action</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <!-- <button
+        <div class="col-8 container-fluid border-0">
+          <div class="v-gap">
+            <section>
+              <div class="mb-3">
+                <textarea class="container-fluid card min-h" id="exampleTextarea1" rows="5" readonly></textarea>
+              </div>
+
+              <div class="mb-3 v-gap input-group">
+                <input type="text" class="form-control" placeholder="Type your message here." aria-label="Input message"
+                  aria-describedby="button-addon2" id="iputBox" />
+                <button class="btn btn-outline-secondary" type="button" id="send-button" onclick="sendMessage()">
+                  Send
+                </button>
+              </div>
+            </section>
+            <section>
+              <div class="row border-line g-0 v-gap">
+                <div class="col-4 d-none d-sm-none d-md-block">
+                  <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+                    <nav class="nav nav-pills flex-column ">
+                      <a class="nav-link" href="#item-1">Item 1: The Darkspawn Threat
+                      </a>
+                      <nav class="nav nav-pills flex-column">
+                        <a class="nav-link ms-3 my-1" href="#item-1-1">Item 1-1: The Origin of
+                          Darkspawn</a>
+                        <a class="nav-link ms-3 my-1" href="#item-1-2">Item 1-2 Item 1-2:
+                          Darkspawn Weaknesses</a>
+                      </nav>
+                      <a class="nav-link" href="#item-2">Item 2: The Hunters’ Guild</a>
+                    </nav>
+                  </nav>
+                </div>
+
+                <div class="col">
+                  <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-smooth-scroll="true"
+                    class="scrollspy-example-2" tabindex="0">
+                    <div id="item-1">
+                      <h4>Item 1: The Darkspawn Threat</h4>
+                      <p>
+                        The Darkspawn, a collection of malevolent creatures
+                        from the Abyss, have terrorized the realms for
+                        centuries. These foul beasts thrive on chaos and
+                        destruction, threatening to plunge the world into
+                        eternal night. They are born from dark magic, feeding
+                        on despair and bloodshed.
+                      </p>
+                    </div>
+                    <div id="item-1-1">
+                      <h5>Item 1-1: The Origin of Darkspawn</h5>
+                      <p>
+                        Long ago, when the Ancients sealed away the Abyssal
+                        Lord, some of his power leaked into the mortal realm,
+                        corrupting the land. This foul energy seeped into the
+                        bodies of animals, turning them into hideous,
+                        bloodthirsty creatures known as Darkspawn. Over time,
+                        they evolved, becoming more intelligent and organized,
+                        forming their own monstrous factions.
+                      </p>
+                      <h5>Subtypes of Darkspawn:</h5>
+                      <ul>
+                        <li>
+                          <strong>Gorefiends:</strong> The most common type,
+                          savage and relentless. They resemble wolves but are
+                          covered in spiny scales and emit a deadly toxin from
+                          their mouths.
+                        </li>
+                        <li>
+                          <strong>Nightmares:</strong> Shadowy figures that
+                          manipulate fear, appearing to hunters in their most
+                          terrifying forms. They can vanish into the dark and
+                          strike from anywhere.
+                        </li>
+                        <li>
+                          <strong>Abyssal Lords:</strong> The most powerful
+                          Darkspawn, capable of controlling the lesser minions
+                          and casting dark magic. Only the greatest hunters
+                          can defeat these monstrosities.
+                        </li>
+                      </ul>
+                    </div>
+                    <div id="item-1-2">
+                      <h5>Item 1-2: Darkspawn Weaknesses</h5>
+                      <p>
+                        Though formidable, the Darkspawn have weaknesses that
+                        skilled hunters exploit. The creatures are highly
+                        sensitive to light and holy magic, their flesh burning
+                        under the radiant energy of the sun or blessed
+                        weapons. Silver-tipped arrows and swords are
+                        particularly effective, as silver disrupts the dark
+                        magic animating them.
+                      </p>
+                    </div>
+                    <div id="item-2">
+                      <h4>Item 2: The Hunters’ Guild</h4>
+                      <p>
+                        To protect the realms, the Hunters’ Guild was formed,
+                        an ancient order dedicated to eradicating monsters and
+                        defending civilization from the horrors of the Abyss.
+                        The guild operates in secret, its members trained in
+                        the art of combat, magic, and monster lore.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Modal title
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">...</div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                      Close
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                      Save changes
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <button
         type="button"
         class="btn btn-lg btn-danger"
         data-bs-toggle="popover"
@@ -591,15 +587,15 @@
       >
         Click to toggle popover
       </button> -->
-        </main>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <!--import script from source file to call in socket function-->
-    <script src="socket.io/socket.io.js"></script>
-    <!-- declare socket as io() function-->
-    <script>const socket = io()</script>
+    </main>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <!--import script from source file to call in socket function-->
+  <script src="socket.io/socket.io.js"></script>
+  <!-- declare socket as io() function-->
+  <script>const socket = io()</script>
 </body>
 
 </html>

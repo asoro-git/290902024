@@ -33,11 +33,21 @@ app.get("/roadmap", (req, res) => {
   res.sendFile(path.join(__dirname, "roadmap.html"));
 });
 
+let playerCount = 0;
 // after serving files to front end, io start listening to message sent from front end
 // console log if mutual channel has been established
 // io receive signal from frontend, create connection and disconnection messages
 io.on("connection", (socket) => {
   console.log(`user ${socket.id} connected.`);
+  const userId = socket.id;
+  playerCount += 1;
+  io.emit("online players", { playerCount });
+  socket.on("name change", (data) => {
+    let userName = data.userName;
+    console.log("sever received name change event", userName);
+    io.emit("player list", { userName, userId });
+    console.log("server emitted name change", data);
+  });
   socket.on("chat message", (data) => {
     let _userName = data.userName;
     let _message = data.message;
@@ -62,6 +72,7 @@ io.on("connection", (socket) => {
       <table>
       <td>
       <li>/bigger to make your text bigger</li>
+      <li>press the \` key on keyboard to scroll to bottom of chat</li>
       <li>Change name using navbar dropdown menu</li>
       <li>in-chat help function, type /help into chat to look at this page again</li>
       </ul>
@@ -82,8 +93,11 @@ io.on("connection", (socket) => {
     );
   });
 
+  console.log(playerCount);
   socket.on("disconnect", () => {
     console.log(`user ${socket.id} has disconnected.`);
+    playerCount -= 1;
+    io.emit("online players", { playerCount });
   });
 });
 
