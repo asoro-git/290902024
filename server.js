@@ -49,6 +49,39 @@ io.on("connection", (socket) => {
     io.emit("chat message", { _userName, _message, _choking_message });
   });
 
+  socket.on("send help message", () => {
+    socket.emit(
+      "help message",
+      `
+      </span>
+      <div class="container" style="width: 100%">
+      <center>
+      <h1> HELP MENU </h1>
+      <br>Below are commands available at the moment 
+      <br>
+      <table>
+      <td>
+      <li>/bigger to make your text bigger</li>
+      <li>Change name using navbar dropdown menu</li>
+      <li>in-chat help function, type /help into chat to look at this page again</li>
+      </ul>
+      <br><strong>features to be added</strong>
+      <ul>
+      <li>login page</li>
+      <li>profile page</li>
+      <li>adventure page</li>
+      </li>inventory</li>
+      <li>and more..., please stay tunned...</li>
+      </ul>
+      </td>
+      </table>
+      </div>
+      </center>
+      <span>
+      `
+    );
+  });
+
   socket.on("disconnect", () => {
     console.log(`user ${socket.id} has disconnected.`);
   });

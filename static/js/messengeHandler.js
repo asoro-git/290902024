@@ -1,5 +1,8 @@
 var messageCount = 0;
 const messageBox = document.getElementById("messageBox");
+const messageBoxPlaceHolders = document.getElementById(
+  "message-box-placeholders"
+);
 const inputBox = document.getElementById("inputBox");
 const sendButton = document.getElementById("send-button");
 const exampleModal = document.getElementById("example-modal");
@@ -24,19 +27,27 @@ function getCustomName() {
   }
 }
 
-function clearBoard() {
-  messageBox.innerHTML = "";
-}
-
 function sendHelpMessage() {
   console.log("sending help message");
+  messageCount += 1;
+  let helpMessage = serverHelpMessage;
+  timeStamp = getTimeStamp();
+  if (messageCount == 1 && messageBox.innerHTML.includes("placeholder")) {
+    messageBox.innerHTML = "";
+    appendNamelessMessage(timeStamp, helpMessage);
+  } else {
+    appendNamelessMessage(timeStamp, helpMessage);
+  }
 }
 
 function sendMessage() {
   console.log("sending");
   let message = inputBox.value;
-  // if first time sending message, clear placeholder
-  if (message.length <= 500) {
+  // check for client-side commands
+  if (/^(\/help)$/g.test(message)) {
+    sendHelpMessage();
+  } else if (message.length <= 500) {
+    // if first time sending message, clear placeholder
     messageCount += 1;
     socket.emit("chat message", { userName, message, messageCount });
     inputBox.value = "";
@@ -60,7 +71,7 @@ function appendMessage(data) {
       _message = `<h1>*Gulp...*</h1> You suddenly choked on too much saliva. You overhear some murmurs, as you are busy wiping away your saliva, mocking your lack of eloquence. Be careful, ${userName}! Promise me this is your last time.`;
     }
     timeStamp = getTimeStamp();
-    appendEmptyMessage(timeStamp, _message);
+    appendNamelessMessage(timeStamp, _message);
   } else {
     prepareNonEmptyMessage(_userName, _message);
   }
@@ -79,7 +90,8 @@ function getTimeStamp() {
   let timeStamp = `${dtHour}:${dtMinute}`;
   return timeStamp;
 }
-function appendEmptyMessage(timeStamp, _message) {
+
+function appendNamelessMessage(timeStamp, _message) {
   if (
     messageBox.scrollTop + messageBox.clientHeight >=
     messageBox.scrollHeight
@@ -128,3 +140,28 @@ socket.on("chat message", (data) => {
   console.log(_message, _userName);
   appendMessage({ _userName, _message, _choking_message });
 });
+
+socket.emit(
+  "send help message",
+  console.log("asking help message from server")
+);
+
+socket.on("help message", (data) => {
+  serverHelpMessage = data;
+  console.log(data);
+});
+
+// send help message once client loaded
+window.addEventListener(
+  "DOMContentLoaded",
+  function () {
+    // do stuff
+    socket.on("help message", (data) => {
+      serverHelpMessage = data;
+      messageBoxPlaceHolders.style.transition = "opacity 0.5s ease-out";
+      messageBoxPlaceHolders.style.opacity = 0;
+      this.setTimeout(sendHelpMessage, 500);
+    });
+  },
+  false
+);
