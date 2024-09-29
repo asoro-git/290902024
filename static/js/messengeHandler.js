@@ -10,20 +10,16 @@ const submitNameBtn = document.getElementById("submit-name-btn");
 const customNameBox = document.getElementById("custom-name-box");
 let userName = "Someone";
 let i = 0;
-oldMessage = [""];
+oldMessage = [];
 
 document.addEventListener("keydown", (event) => {
   if (event.key == "Enter" && !exampleModal.classList.contains("show")) {
     sendMessage();
   }
-  if (event.key == "ArrowUp") {
-    i += 1;
-    i = i % 10;
-    if (oldMessage.length - i < 0) {
-      i = 0;
-      oldMessage[oldMessage.length - i];
-    } else {
-      inputBox.value = oldMessage[oldMessage.length - i];
+  if (event.key == "ArrowUp" && oldMessage.length > 0) {
+    inputBox.value = oldMessage[oldMessage.length - 1];
+    if (oldMessage.length > 1) {
+      oldMessage.splice(0, 1);
     }
   }
   if (event.key == "`") {
@@ -75,6 +71,7 @@ function sendMessage() {
   if (messageCount == 1 && messageBox.innerHTML.includes("placeholder")) {
     clearBoard();
   }
+  oldMessage.push(message);
 }
 
 function appendMessage(data) {
@@ -131,7 +128,6 @@ function appendIncomingMessage(timeStamp, _message) {
   } else {
     messageBox.innerHTML += `<span class="text-light"> [${timeStamp}] ${_userName} says: ${_message} </span>`;
   }
-  oldMessage.push(_message);
 }
 
 function prepareNonEmptyMessage(_userName, _message) {

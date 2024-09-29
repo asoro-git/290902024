@@ -1,5 +1,5 @@
 :root {
-  --height: 40vh;
+  --height: 30vh;
   --min-message-container-height: 80vh;
   --min-body-container-width: 50%;
   --min-chatbox-height: 45px;
@@ -39,7 +39,8 @@
 
 body {
   width: 100%;
-  margin: 70px 0px;
+  height: 100%;
+  margin-top: 80px;
 }
 
 .m-h {
