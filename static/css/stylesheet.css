@@ -1,16 +1,12 @@
 :root {
-  --min-body-container-height: 80vh;
-  --min-message-container-height: 300px;
+  --height: 40vh;
+  --min-message-container-height: 80vh;
   --min-body-container-width: 50%;
   --min-chatbox-height: 45px;
   --vertical-gap: 30px;
 }
 .nav-link {
   color: whitesmoke !important;
-}
-
-.form {
-  width: 100%;
 }
 
 ::-webkit-scrollbar {
@@ -47,7 +43,7 @@ body {
 }
 
 .m-h {
-  height: var(--min-body-container-height);
+  max-height: var(--height);
   overflow: auto;
 }
 
