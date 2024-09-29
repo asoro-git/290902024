@@ -14,7 +14,7 @@ const http = require("http");
 const server = http.createServer(app);
 const io = socketio(server);
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "frontend.html"));
+  res.sendFile(path.join(__dirname, "index.html"));
 });
 
 app.get("/sidebar", (req, res) => {
