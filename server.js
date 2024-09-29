@@ -41,8 +41,12 @@ io.on("connection", (socket) => {
   socket.on("chat message", (data) => {
     let _userName = data.userName;
     let _message = data.message;
+    let _choking_message = `<h1>*Gulp...*</h1> ${_userName} suddenly choked on too much saliva. You hear some murmurs, mocking ${_userName}'s lack of eloquence. Be careful, ${_userName}! Promise me this is your last time.`;
+    if (_message == "") {
+      _message = _choking_message;
+    }
     console.log(data.userName, data.message, data.messageCount);
-    io.emit("chat message", { _userName, _message });
+    io.emit("chat message", { _userName, _message, _choking_message });
   });
 
   socket.on("disconnect", () => {
