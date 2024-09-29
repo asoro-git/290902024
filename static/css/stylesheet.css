@@ -43,7 +43,7 @@ body {
 }
 
 .m-h {
-  max-height: var(--height);
+  height: var(--height);
   overflow: auto;
 }
 
