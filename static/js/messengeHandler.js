@@ -36,8 +36,8 @@ function appendMessage(message) {
     message = `<h1>${message}</h1>`;
   }
   console.log(message);
-
-  messageBox.innerHTML += `<span> ${message} </span>`;
+  let timestamp = Date();
+  messageBox.innerHTML += `<span> [${timestamp}] Someone says: ${message} </span>`;
 }
 
 socket.on("chat message", (message) => appendMessage(message));
