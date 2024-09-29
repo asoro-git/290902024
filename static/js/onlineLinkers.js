@@ -45,3 +45,13 @@ socket.on("player list", (data) => {
   //            >
   //     </li>
 });
+
+socket.on("disconnected player", (data) => {
+  console.log(data.userId.toString());
+  let item = document.getElementById(data.userId.toString());
+  console.log(item);
+  let playerLink = item.parentNode;
+  let playerItem = playerLink.parentNode;
+  let playerList = playerItem.parentNode;
+  playerList.removeChild(playerItem);
+});

@@ -34,6 +34,7 @@ app.get("/roadmap", (req, res) => {
 });
 
 let playerCount = 0;
+let userName = "Someone";
 // after serving files to front end, io start listening to message sent from front end
 // console log if mutual channel has been established
 // io receive signal from frontend, create connection and disconnection messages
@@ -42,6 +43,7 @@ io.on("connection", (socket) => {
   const userId = socket.id;
   playerCount += 1;
   io.emit("online players", { playerCount });
+  io.emit("player list", { userName, userId });
   socket.on("name change", (data) => {
     let userName = data.userName;
     console.log("sever received name change event", userName);
@@ -95,9 +97,13 @@ io.on("connection", (socket) => {
 
   console.log(playerCount);
   socket.on("disconnect", () => {
+    let userId = socket.id;
+    console.log(userId);
     console.log(`user ${socket.id} has disconnected.`);
     playerCount -= 1;
     io.emit("online players", { playerCount });
+    io.emit("disconnected player", { userId });
+    console.log(userId);
   });
 });
 
