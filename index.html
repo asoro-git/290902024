@@ -58,7 +58,7 @@
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >
-                  Dropdown
+                  Change Name
                 </a>
 
                 <ul class="dropdown-menu">
@@ -67,12 +67,14 @@
                       class="dropdown-item"
                       href="#"
                       data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
+                      data-bs-target="#example-modal"
                     >
-                      Toggle Alert
+                      Pick a name
                     </a>
                   </li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li>
+                    <button class="dropdown-item" onclick="sendHelpMessage()">Display help message</a>
+                  </li>
                   <li>
                     <hr class="dropdown-divider" />
                   </li>
@@ -308,25 +310,30 @@
         <!-- Modal -->
         <div
           class="modal fade modal-open"
-          id="exampleModal"
+          id="example-modal"
           tabindex="-1"
-          aria-labelledby="exampleModalLabel"
+          aria-labelledby="example-modal-label"
           aria-hidden="true"
         >
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h1 class="modal-title fs-5" id="exampleModalLabel">
-                  Modal title
+                <h1 class="modal-title fs-5" id="example-modal-label">
+                  Pick A Name
                 </h1>
+
                 <button
                   type="button"
+                  id="close-button"
                   class="btn-close"
                   data-bs-dismiss="modal"
                   aria-label="Close"
                 ></button>
               </div>
-              <div class="modal-body">...</div>
+              <div class="modal-body">
+                <p>Enter a name you like...</p>
+                <input class="form-control" id="custom-name-box" />
+              </div>
               <div class="modal-footer">
                 <button
                   type="button"
@@ -335,7 +342,13 @@
                 >
                   Close
                 </button>
-                <button type="button" class="btn btn-primary">
+                <button
+                  type="button"
+                  id="submit-name"
+                  class="btn btn-primary"
+                  onclick="getCustomName()"
+                  data-bs-dismiss="modal"
+                >
                   Save changes
                 </button>
               </div>

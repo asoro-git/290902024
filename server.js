@@ -33,17 +33,16 @@ app.get("/roadmap", (req, res) => {
   res.sendFile(path.join(__dirname, "roadmap.html"));
 });
 
-let message = "";
-
 // after serving files to front end, io start listening to message sent from front end
 // console log if mutual channel has been established
 // io receive signal from frontend, create connection and disconnection messages
 io.on("connection", (socket) => {
   console.log(`user ${socket.id} connected.`);
   socket.on("chat message", (data) => {
-    message = data.message;
+    let _userName = data.userName;
+    let _message = data.message;
     console.log(data.message, data.messageCount);
-    io.emit("chat message", message);
+    io.emit("chat message", { _userName, _message });
   });
 
   socket.on("disconnect", () => {
