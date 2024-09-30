@@ -23,7 +23,7 @@ socket.on("player list", (data) => {
       let strongEl = document.createElement("strong");
 
       playerItem.classList.add("nav-item");
-      playerLink.href = "#";
+      playerLink.href = "#" + itemId;
       playerLink.classList.add("nav-link", "text-center");
       strongEl.innerText = "Linker Terminal " + itemId.toString().slice(0, 3);
 

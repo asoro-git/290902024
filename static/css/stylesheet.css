@@ -1,5 +1,5 @@
 :root {
-  --height: 30vh;
+  --height: 60vh;
   --min-message-container-height: 80vh;
   --min-body-container-width: 50%;
   --min-chatbox-height: 45px;
@@ -20,7 +20,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.2);
   border-radius: 10px; /* Optional: just make scrollbar invisible */
 }
 
