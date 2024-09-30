@@ -85,13 +85,18 @@ io.on("connection", (socket) => {
       <li>Change name using navbar dropdown menu</li>
       <li>in-chat help function, type /help into chat to look at this page again</li>
       </ul>
-      <br><strong>features to be added</strong>
+      <br><strong>Features to be added</strong>
       <ul>
       <li>login page</li>
+      <li>promodoro clock</li>
+      <li>offline hunting</li>
+      <li>idle leveling</li>
       <li>profile page</li>
       <li>adventure page</li>
-      </li>inventory</li>
-      <li>and more..., please stay tunned...</li>
+      <li>inventory</li>
+      <li>weather system based on server world time</li>
+      <li>server/ world time system</li>
+      <li>and more... please stay tunned...</li>
       </ul>
       </td>
       </table>
