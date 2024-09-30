@@ -5,6 +5,12 @@
   --min-chatbox-height: 45px;
   --vertical-gap: 30px;
 }
+
+.carousel-control-next,
+.carousel-control-prev /*, .carousel-indicators */ {
+  filter: invert(100%);
+}
+
 .nav-link {
   color: whitesmoke !important;
 }
