@@ -35,15 +35,22 @@ app.get("/roadmap", (req, res) => {
 
 let playerCount = 0;
 let userName = "Someone";
+let existingPlayerId = [];
+
 // after serving files to front end, io start listening to message sent from front end
 // console log if mutual channel has been established
 // io receive signal from frontend, create connection and disconnection messages
 io.on("connection", (socket) => {
   console.log(`user ${socket.id} connected.`);
+
   const userId = socket.id;
+  existingPlayerId.push(userId);
   playerCount += 1;
+  console.log(existingPlayerId, playerCount);
+  userName = "Burst Linker " + socket.id.toString().substring(0, 5);
+  _userName = userName;
   io.emit("online players", { playerCount });
-  io.emit("player list", { userName, userId });
+  io.emit("player list", { userName, userId, existingPlayerId });
   socket.on("name change", (data) => {
     let userName = data.userName;
     console.log("sever received name change event", userName);
@@ -97,13 +104,17 @@ io.on("connection", (socket) => {
 
   console.log(playerCount);
   socket.on("disconnect", () => {
-    let userId = socket.id;
-    console.log(userId);
-    console.log(`user ${socket.id} has disconnected.`);
+    let __userId = socket.id;
+    console.log(__userId);
+    console.log(`user ${__userId} has disconnected.`);
     playerCount -= 1;
     io.emit("online players", { playerCount });
-    io.emit("disconnected player", { userId });
-    console.log(userId);
+    io.emit("disconnected player", { __userId });
+    console.log(__userId);
+    existingPlayerId = existingPlayerId.filter(
+      (item) => item != __userId.toString()
+    );
+    console.log(existingPlayerId, playerCount);
   });
 });
 

@@ -1,4 +1,4 @@
-let existingPlayerId = [];
+clientSideExistingPlayerId = [];
 
 socket.on("online players", (data) => {
   let item = document.getElementById("player-number");
@@ -12,46 +12,51 @@ socket.on("online players", (data) => {
 
 socket.on("player list", (data) => {
   console.log("received data: ", data);
+  existingPlayerId = data.existingPlayerId;
+  console.log(existingPlayerId, data.userId);
+  data.existingPlayerId.forEach((itemId) => {
+    if (!clientSideExistingPlayerId.includes(itemId)) {
+      console.log(itemId, "creating ID");
+      let playerList = document.getElementById("player-list");
+      let playerItem = document.createElement("li");
+      let playerLink = document.createElement("a");
+      let strongEl = document.createElement("strong");
 
-  console.log(existingPlayerId);
-  if (!existingPlayerId.includes(data.userId)) {
-    console.log(existingPlayerId);
-    let playerList = document.getElementById("player-list");
-    let playerItem = document.createElement("li");
-    let playerLink = document.createElement("a");
-    let strongEl = document.createElement("strong");
+      playerItem.classList.add("nav-item");
+      playerLink.href = "#";
+      playerLink.classList.add("nav-link", "text-center");
+      strongEl.innerText = "Linker Terminal " + itemId.toString().slice(0, 3);
 
-    playerItem.classList.add("nav-item");
-    playerLink.href = "#";
-    playerLink.classList.add("nav-link", "text-center");
-    strongEl.innerText = data.userName.toString();
-    strongEl.id = data.userId.toString();
+      strongEl.id = itemId;
 
-    playerLink.appendChild(strongEl);
+      playerLink.appendChild(strongEl);
+      playerItem.appendChild(playerLink);
+      playerList.appendChild(playerItem);
 
-    playerItem.appendChild(playerLink);
-    playerList.appendChild(playerItem);
-    existingPlayerId.push(data.userId);
-    console.log(existingPlayerId);
-  } else {
-    let item = document.getElementById(data.userId.toString());
-    console.log(data.userName.toString());
-    item.innerText = data.userName.toString();
-  }
-
-  //     <li class="nav-item">
-  //            <a href="#" class="nav-link text-center">
-  //       <!--player name here-->test</a
-  //            >
-  //     </li>
+      console.log(existingPlayerId);
+      clientSideExistingPlayerId.push(itemId);
+    } else {
+      let strongEl = document.getElementById(itemId);
+      console.log(itemId.toString());
+      strongEl.innerText = "Linker Terminal " + itemId.toString().slice(0, 3);
+    }
+  });
 });
 
+//     <li class="nav-item">
+//            <a href="#" class="nav-link text-center">
+//       <!--player name here-->test</a
+//            >
+//     </li>
+// });
+
 socket.on("disconnected player", (data) => {
-  console.log(data.userId.toString());
-  let item = document.getElementById(data.userId.toString());
+  console.log(data.__userId.toString());
+  let item = document.getElementById(data.__userId.toString());
   console.log(item);
   let playerLink = item.parentNode;
   let playerItem = playerLink.parentNode;
   let playerList = playerItem.parentNode;
   playerList.removeChild(playerItem);
+  clientSideExistingPlayerId.filter((e) => e != data.__userId.toString());
 });
