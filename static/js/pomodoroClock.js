@@ -67,12 +67,12 @@ function countDownPmd() {
       i += 1;
     }
     updateClock(minuteLeft, secondTimer);
-    setTimeout(countDownPmd, 1);
+    setTimeout(countDownPmd, 1000);
   } else if (minuteLeft > 0) {
     minuteLeft -= 1;
     secondTimer = 59;
     updateClock(minuteLeft, secondTimer);
-    setTimeout(countDownPmd, 1);
+    setTimeout(countDownPmd, 1000);
   } else {
     notifyMe("Time is up!");
 
