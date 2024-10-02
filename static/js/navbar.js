@@ -58,7 +58,7 @@ const navHtmlComponent = `
                   <hr class="dropdown-divider" />
                 </li>
                 <li>
-                  <a class="dropdown-item" href="/Pomodoro">Pomodoro Clock Section</a>
+                  <a class="dropdown-item" href="/Pomodoro">Pomodoro Clock</a>
                 </li>
               </ul>
             </li>
