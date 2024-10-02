@@ -19,95 +19,9 @@
   </head>
 
   <body>
-    <section>
+    <div id="navbarComponent">
       <!--nav-bar-->
-      <header class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
-        <nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
-          <!--navbar offcanvas toggle: data-bs-toggle, data-bs-target-->
-          <a
-            class="navbar-brand"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasExample"
-            href="#"
-            ><i>Accel Universe Online</i></a
-          >
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/roadmap">Roadmap</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Change Name
-                </a>
-
-                <ul class="dropdown-menu">
-                  <li>
-                    <a
-                      class="dropdown-item"
-                      href="#"
-                      data-bs-toggle="modal"
-                      data-bs-target="#example-modal"
-                    >
-                      Pick a name
-                    </a>
-                  </li>
-                  <li>
-                    <button class="dropdown-item" onclick="sendHelpMessage()">
-                      Display help message
-                    </button>
-                  </li>
-                  <li>
-                    <hr class="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true"
-                  >Comming soon</a
-                >
-              </li>
-            </ul>
-            <form name="search" class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                name="search"
-                id="search"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
-          </div>
-        </nav>
-      </header>
-    </section>
+    </div>
     <section>
       <section>
         <div
@@ -278,53 +192,8 @@
               </button>
             </div>
 
-            <!-- Modal -->
-            <div
-              class="modal fade modal-open"
-              id="example-modal"
-              tabindex="-1"
-              aria-labelledby="example-modal-label"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="example-modal-label">
-                      Pick A Name
-                    </h1>
-
-                    <button
-                      type="button"
-                      id="close-button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                      aria-label="Close"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    <p>Enter a name you like...</p>
-                    <input class="form-control" id="custom-name-box" />
-                  </div>
-                  <div class="modal-footer">
-                    <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-bs-dismiss="modal"
-                    >
-                      Close
-                    </button>
-                    <button
-                      type="button"
-                      id="submit-name-btn"
-                      class="btn btn-primary"
-                      onclick="getCustomName()"
-                      data-bs-dismiss="modal"
-                    >
-                      Save changes
-                    </button>
-                  </div>
-                </div>
-              </div>
+            <div id="modal-example1">
+              <!-- modal -->
             </div>
           </div>
           <!-- <div class="col-2 d-none d-sm-none d-md-block"></div> -->
@@ -357,5 +226,7 @@
 
     <script src="static/js/messengeHandler.js"></script>
     <script src="static/js/onlineLinkers.js"></script>
+    <script src="static/js/navbar.js"></script>
+    <script src="static/js/modal.js"></script>
   </body>
 </html>

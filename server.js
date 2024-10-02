@@ -33,6 +33,10 @@ app.get("/roadmap", (req, res) => {
   res.sendFile(path.join(__dirname, "roadmap.html"));
 });
 
+app.get("/pomodoro", (req, res) => {
+  res.sendFile(path.join(__dirname, "pomodoro.html"));
+});
+
 let playerCount = 0;
 let userName = "Someone";
 let existingPlayerId = [];
@@ -60,14 +64,19 @@ io.on("connection", (socket) => {
   socket.on("chat message", (data) => {
     let _userName = data.userName;
     let _message = data.message;
-    let _choking_message = `<h1>*Gulp...*</h1> ${_userName} suddenly choked on too much saliva. You hear some murmurs, mocking ${_userName}'s lack of eloquence. Be careful, ${_userName}! Promise me this is your last time.`;
+    let _choking_message = `<h1>*Gulp...*</h1> ${_userName} suddenly choked on their own saliva. You hear some murmurs, mocking ${_userName}'s lack of eloquence. Be careful, ${_userName}! Promise me this is your last time.`;
     if (_message == "") {
       _message = _choking_message;
     }
     console.log(data.userName, data.message, data.messageCount);
     io.emit("chat message", { _userName, _message, _choking_message });
   });
-
+  socket.onAny((event, ...args) => {
+    const logMessage = `Client: ${
+      socket.id
+    }, Event: ${event}, Args: ${JSON.stringify(args)}\n`;
+    console.log(logMessage);
+  });
   socket.on("send help message", () => {
     socket.emit(
       "help message",
@@ -88,15 +97,22 @@ io.on("connection", (socket) => {
       <br><strong>Features to be added</strong>
       <ul>
       <li>login page</li>
-      <li>promodoro clock</li>
+      <li>pomodoro clock</li>
       <li>offline hunting</li>
       <li>idle leveling</li>
       <li>profile page</li>
       <li>adventure page</li>
       <li>inventory</li>
+      <li>move alert logics to server side when possible</li>
+      <li>server authenticate socket events</li>
       <li>weather system based on server world time</li>
       <li>server/ world time system</li>
       <li>and more... please stay tunned...</li>
+      </ul>
+      <ul><strong>Road Map</strong>
+      <li>Vanilla JS Program</li>
+      <li>?Nextjs/ EJS Framework</li>
+      <li>React rebuild</li>
       </ul>
       </td>
       </table>

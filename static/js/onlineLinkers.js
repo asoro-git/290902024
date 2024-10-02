@@ -48,7 +48,6 @@ socket.on("player list", (data) => {
 //       <!--player name here-->test</a
 //            >
 //     </li>
-// });
 
 socket.on("disconnected player", (data) => {
   console.log(data.__userId.toString());

@@ -83,7 +83,7 @@ function appendMessage(data) {
 
   if (_message == _choking_message) {
     if (_userName == userName) {
-      _message = `<h1>*Gulp...*</h1> You suddenly choked on too much saliva. As you are busy wiping away your saliva, you overhear some murmurs mocking your lack of eloquence. Be careful, ${userName}! Promise me this is your last time.`;
+      _message = `<h1>*Gulp...*</h1> You suddenly choked on your own saliva. As you are busy wiping away your saliva, you overhear some murmurs mocking your lack of eloquence. Be careful, ${userName}! Promise me this is your last time.`;
     }
     timeStamp = getTimeStamp();
     appendNamelessMessage(timeStamp, _message);
