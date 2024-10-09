@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Front-end</title>
+		<link
+			rel="icon"
+			type="image/x-icon"
+			href="/static/images/placeholder.ico"
+		/>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+			crossorigin="anonymous"
+		/>
+		<link href="static/css/stylesheet.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="navbarComponent">
+			<!--nav-bar-->
+			<header class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+				<nav class="container-xxl bd-gutter flex-wrap flex-lg-nowrap">
+					<!--navbar offcanvas toggle: data-bs-toggle, data-bs-target-->
+					<a
+						class="navbar-brand"
+						data-bs-toggle="offcanvas"
+						data-bs-target="#offcanvasExample"
+						href="#"
+						><i>Accel Universe Online</i></a
+					>
+					<button
+						class="navbar-toggler"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#navbarSupportedContent"
+						aria-controls="navbarSupportedContent"
+						aria-expanded="false"
+						aria-label="Toggle navigation"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div
+						class="collapse navbar-collapse"
+						id="navbarSupportedContent"
+					>
+						<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+							<li class="nav-item">
+								<a
+									class="nav-link active"
+									aria-current="page"
+									href="/"
+									>Home</a
+								>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href="/roadmap">Roadmap</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a
+									class="nav-link dropdown-toggle"
+									href="#"
+									role="button"
+									data-bs-toggle="dropdown"
+									aria-expanded="false"
+								>
+									Change Name
+								</a>
+								<ul class="dropdown-menu">
+									<li>
+										<a
+											class="dropdown-item"
+											href="#"
+											data-bs-toggle="modal"
+											data-bs-target="#example-modal"
+										>
+											Pick a name
+										</a>
+									</li>
+									<li>
+										<button
+											class="dropdown-item"
+											onclick="sendHelpMessage()"
+										>
+											Display help message
+										</button>
+									</li>
+									<li>
+										<hr class="dropdown-divider" />
+									</li>
+									<li>
+										<a
+											class="dropdown-item"
+											href="/Pomodoro"
+											>Pomodoro Clock</a
+										>
+									</li>
+								</ul>
+							</li>
+							<% if (userName !== undefined) { %>
+							<li class="nav-item">
+								<form
+									action="/logout?_method=DELETE"
+									method="POST"
+								>
+									<button class="nav-link">Logout</button>
+								</form>
+							</li>
+							<% } %>
+						</ul>
+						<form name="search" class="d-flex" role="search">
+							<input
+								class="form-control me-2"
+								name="search"
+								id="search"
+								type="search"
+								placeholder="Search"
+								aria-label="Search"
+							/>
+							<button
+								class="btn btn-outline-success"
+								type="submit"
+							>
+								Search
+							</button>
+						</form>
+					</div>
+				</nav>
+			</header>
+		</div>
+		<section>
+			<section>
+				<div
+					class="offcanvas offcanvas-start sidebar-sticky"
+					tabindex="-1"
+					id="offcanvasExample"
+					aria-labelledby="offcanvasExampleLabel"
+				>
+					<div class="offcanvas-header">
+						<h5 class="offcanvas-title" id="offcanvasExampleLabel">
+							Offcanvas
+						</h5>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="offcanvas"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="offcanvas-body">
+						<div>
+							Some text as placeholder. In real life you can have
+							the elements you have chosen. Like, text, images,
+							lists, etc.
+						</div>
+						<div class="dropdown mt-3">
+							<button
+								class="btn btn-secondary dropdown-toggle"
+								type="button"
+								data-bs-toggle="dropdown"
+							>
+								Dropdown button
+							</button>
+							<ul class="dropdown-menu">
+								<li>
+									<a class="dropdown-item" href="#">Action</a>
+								</li>
+								<li>
+									<a class="dropdown-item" href="#"
+										>Another action</a
+									>
+								</li>
+								<li>
+									<a class="dropdown-item" href="#"
+										>Something else here</a
+									>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+		</section>
+		<section>
+			<!-- main-container -->
+			<div class="container-sm">
+				<form action="/register" method="POST">
+					<div
+						class="form-group d-flex justify-content-center flex-column"
+					>
+						<br />
+						<label for="username">Username</label>
+						<input
+							type="string"
+							name="username"
+							id="username"
+							class="form-control"
+						/>
+						<br />
+						<label for="email">Email</label>
+						<input
+							type="email"
+							name="email"
+							id="email"
+							class="form-control"
+						/>
+						<br />
+						<label for="password" name="password">Password</label>
+						<input
+							type="password"
+							name="password"
+							id="password"
+							class="form-control"
+						/>
+						<br />
+					</div>
+					<button class="btn btn-outline-secondary">Submit</button>
+				</form>
+			</div>
+			<!-- <button
+        type="button"
+        class="btn btn-lg btn-danger"
+        data-bs-toggle="popover"
+        data-bs-title="Popover title"
+        data-bs-content="And here's some amazing content. It's very engaging. Right?"
+      >
+        Click to toggle popover
+      </button> -->
+		</section>
+		<!-- boostrap -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+			crossorigin="anonymous"
+		></script>
+		<script src="static/js/bootstrapJs.js"></script>
+
+		<!--socket-->
+		<script src="socket.io/socket.io.js"></script>
+		<script>
+			const socket = io();
+			console.log("browser socket connected");
+		</script>
+
+		<script src="static/js/messengeHandler.js"></script>
+		<script src="static/js/onlineLinkers.js"></script>
+		<script src="static/js/modal.js"></script>
+	</body>
+</html>
