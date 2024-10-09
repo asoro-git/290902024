@@ -7,7 +7,7 @@ const http = require("http");
 const socketIo = require("socket.io");
 const path = require("path");
 const UserLogin = require("./models/userLogin");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const createUser = require("./createUser");
 const flash = require("express-flash");
 const session = require("express-session");
@@ -105,7 +105,7 @@ app.get("/", async (req, res) => {
 		});
 	} else {
 		res.render(path.join(__dirname, "index.ejs"), {
-			userName,
+			userName: undefined,
 		});
 	}
 });
