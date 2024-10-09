@@ -32,9 +32,6 @@ function checkNotAuthenticated(req, res, next) {
 	next();
 }
 
-//testing port
-const port = 3000;
-
 // start a http server
 const app = express();
 const server = http.createServer(app);
