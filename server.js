@@ -66,7 +66,7 @@ initializePassport(passport, async (id) => await UserLogin.find({ _id: id }));
 // express-session for passport
 app.use(
 	session({
-		secret: process.env.SESSION_SECRET,
+		secret: process.env["SESSION_SECRET"],
 		resave: false,
 		saveUninitialized: false,
 	})
